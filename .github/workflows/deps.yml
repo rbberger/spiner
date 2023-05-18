@@ -1,9 +1,8 @@
 name: Check Spack dependencies for updates
 
 on:
-  workflow_dispatch:
   schedule:
-   - cron: '45 10 * * *'
+   - cron: '0 * * * *'
 
 jobs:
     deps:
