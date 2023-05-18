@@ -3,7 +3,7 @@ name: Check Spack dependencies for updates
 on:
   workflow_dispatch:
   schedule:
-   - cron: '45 10 * * *'
+   - cron: '0 15 * * *'
 
 jobs:
     deps:
@@ -32,6 +32,7 @@ jobs:
           run: |
             git config user.name 'github-actions[bot]'
             git config user.email 'github-actions[bot]@users.noreply.github.com'
+            git branch -D update_spackages || true
             git checkout -b update_spackages
             git add spack-repo
             git commit -m "spack updates"
